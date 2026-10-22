@@ -6,15 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Nume_Pren_Lab2.Models;
+using PalaceanDragoste_Ariana_Lab2.Models;
+using PalaceanDragoste_Ariana_Lab2.Data;
 
 namespace PalaceanDragoste_Ariana_Lab2.Pages.Books
 {
     public class EditModel : PageModel
     {
-        private readonly Nume_Pren_Lab2Context _context;
+        private readonly PalaceanDragoste_Ariana_Lab2Context _context;
 
-        public EditModel(Nume_Pren_Lab2Context context)
+        public EditModel(PalaceanDragoste_Ariana_Lab2Context context)
         {
             _context = context;
         }

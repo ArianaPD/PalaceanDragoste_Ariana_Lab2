@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Nume_Pren_Lab2.Models;
+using PalaceanDragoste_Ariana_Lab2.Models;
+using PalaceanDragoste_Ariana_Lab2.Data;
 
 namespace PalaceanDragoste_Ariana_Lab2.Pages.Publishers
 {
     public class IndexModel : PageModel
     {
-        private readonly Nume_Pren_Lab2Context _context;
+        private readonly PalaceanDragoste_Ariana_Lab2Context _context;
 
-        public IndexModel(Nume_Pren_Lab2Context context)
+        public IndexModel(PalaceanDragoste_Ariana_Lab2Context context)
         {
             _context = context;
         }

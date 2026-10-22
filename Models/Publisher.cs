@@ -1,4 +1,4 @@
-namespace Nume_Pren_Lab2.Models
+namespace PalaceanDragoste_Ariana_Lab2.Models
 {
     public class Publisher
     {

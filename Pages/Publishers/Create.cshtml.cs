@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Nume_Pren_Lab2.Models;
+using PalaceanDragoste_Ariana_Lab2.Models;
+using PalaceanDragoste_Ariana_Lab2.Data;
 
 namespace PalaceanDragoste_Ariana_Lab2.Pages.Publishers
 {
     public class CreateModel : PageModel
     {
-        private readonly Nume_Pren_Lab2Context _context;
+        private readonly PalaceanDragoste_Ariana_Lab2Context _context;
 
-        public CreateModel(Nume_Pren_Lab2Context context)
+        public CreateModel(PalaceanDragoste_Ariana_Lab2Context context)
         {
             _context = context;
         }

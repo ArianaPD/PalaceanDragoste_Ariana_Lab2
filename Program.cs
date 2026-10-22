@@ -1,11 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using PalaceanDragoste_Ariana_Lab2.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<Nume_Pren_Lab2Context>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("Nume_Pren_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Nume_Pren_Lab2Context' not found.")));
+builder.Services.AddDbContext<PalaceanDragoste_Ariana_Lab2Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PalaceanDragoste_Ariana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'PalaceanDragoste_Ariana_Lab2Context' not found.")));
+builder.Services.AddDbContext<PalaceanDragoste_Ariana_Lab2Context>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("PalaceanDragoste_Ariana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'PalaceanDragoste_Ariana_Lab2Context' not found.")));
 
 var app = builder.Build();
 
