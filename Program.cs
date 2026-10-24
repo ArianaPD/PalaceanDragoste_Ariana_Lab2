@@ -6,8 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PalaceanDragoste_Ariana_Lab2Context>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("PalaceanDragoste_Ariana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'PalaceanDragoste_Ariana_Lab2Context' not found.")));
-builder.Services.AddDbContext<PalaceanDragoste_Ariana_Lab2Context>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("PalaceanDragoste_Ariana_Lab2Context") ?? throw new InvalidOperationException("Connection string 'PalaceanDragoste_Ariana_Lab2Context' not found.")));
 
 var app = builder.Build();
