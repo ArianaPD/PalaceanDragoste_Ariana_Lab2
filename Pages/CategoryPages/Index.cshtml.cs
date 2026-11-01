@@ -21,9 +21,28 @@ namespace PalaceanDragoste_Ariana_Lab2.Pages.CategoryPages
 
         public IList<Category> Category { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public CategoryIndexData CategoryIndexData { get; set; }
+        public int CategoryID { get; set; }
+        public int BookID { get; set; }
+
+        public async Task OnGetAsync(int? id, int? bookID)
         {
-            Category = await _context.Category.ToListAsync();
+            CategoryIndexData = new CategoryIndexData();
+            CategoryIndexData.Categories = await _context.Category
+                .Include(i => i.BookCategories)
+                    .ThenInclude(c => c.Book)
+                        .ThenInclude(i => i.Publisher)
+                .AsNoTracking()
+                .OrderBy(i => i.CategoryName)
+                .ToListAsync();
+
+            if (id != null)
+            {
+                CategoryID = id.Value;
+                Category category = CategoryIndexData.Categories
+                    .Where(i => i.ID == id.Value).Single();
+                CategoryIndexData.Books = category.BookCategories.Select(s => s.Book);
+            }
         }
-    }
+            }
 }
